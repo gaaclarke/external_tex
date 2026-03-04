@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'dart:ui' as ui;
 
 void main() {
   runApp(const MyApp());
@@ -66,7 +67,9 @@ class _MyHomePageState extends State<MyHomePage> {
             : SizedBox(
                 width: 200,
                 height: 200,
-                child: Texture(textureId: _textureId!),
+                child: RawImage(
+                  image: ui.getImageFromTexture(_textureId!, 200, 200),
+                )
               ),
       ),
     );
